@@ -24,7 +24,7 @@ There are two sets of benchmarks in the faas-profiler repo, applications and mic
 
 **Getting Started**
 
-To build the images, you need a RISC-V Docker installation. Installing Docker on the same system as faasd will result in conflicts between the two, so there is another bootable disk image included in the materials called function_builder.img that has Docker set up and ready to go without faasd. I can be booted with the following:
+To build the images, you need a RISC-V Docker installation. Installing Docker on the same system as faasd will result in conflicts between the two, so there is another bootable disk image included in the materials called function_builder.img that has Docker set up and ready to go without faasd. It can be booted with the following:
 
 qemu-system-riscv64 -nographic -machine virt -m 8G -bios ./qemu-boot/fw_jump.elf -kernel ./qemu-boot/vmlinux-6.8.9-riscv64 -initrd ./qemu-boot/initrd.img-6.8.9-riscv64 -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-device,rng=rng0 -append "console=ttyS0 rw root=/dev/vda1" -device virtio-blk-device,drive=hd0 -drive file=./function_builder.img,format=raw,id=hd0 -device virtio-net-device,netdev=usernet -netdev user,id=usernet,hostfwd=tcp::22222-:22
 
