@@ -1,6 +1,4 @@
-## Rich Text to Markdown
-
-**Instructions for Undergrads**
+## Instructions for Undergrads
 
 The following are instructions for building an OpenFaaS function for use on a RISC-V faasd deployment.
 
